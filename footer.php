@@ -12,6 +12,8 @@
         <a href="<?php echo esc_url( get_permalink($vie_privee) ); ?>">Vie privée</a>
     <?php endif; ?>
 
+    <span>Mentions légales</span>
+    <span>Vie privée</span>
     <span>Tous droits réservés</span>
 
 </footer>

@@ -9,9 +9,15 @@
 
 <header class="site-header">
 
-    <a href="<?php echo esc_url( home_url('/') ); ?>" class="site-logo">
-        Nathalie Mota
-    </a>
+   <a href="<?php echo esc_url( home_url('/') ); ?>" class="site-logo">
+    <img 
+        src="<?php echo esc_url( get_template_directory_uri() . '/img/logo.png' ); ?>" 
+        alt="Nathalie Mota"
+        width="160"
+        height="auto"
+    />
+</a>
+
 
     <nav class="site-nav">
         <?php

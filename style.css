@@ -1,0 +1,76 @@
+/*
+Theme Name: Nathalie Mota
+Author: Ton nom
+Version: 1.0.0
+Text Domain: nathalie-mota
+*/
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Jost', sans-serif; color: #1a1a1a; background: #fff; }
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+/* ── HEADER ── */
+.site-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 64px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:  60px 100px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    z-index: 900;
+}
+
+.site-logo img {
+    height: 14px;
+    width: auto;
+}
+
+.site-nav ul {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+}
+
+.site-nav a {
+    font-family: 'Space Mono', monospace;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000000;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.site-nav a:hover { color: #C0392B; }
+
+/* ── FOOTER ── */
+.site-footer {
+    border-top: 3px solid black;
+    padding: 24px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}
+
+.site-footer a,
+.site-footer span {
+    font-family: 'Space Mono', monospace;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+.site-footer a:hover { color: #C0392B; }
+
+/* ── BODY OFFSET (compense le header fixe) ── */
+body { padding-top: 64px; }
