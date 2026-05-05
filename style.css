@@ -74,3 +74,147 @@ img { display: block; max-width: 100%; }
 
 /* ── BODY OFFSET (compense le header fixe) ── */
 body { padding-top: 64px; }
+
+
+.infos-contact input,
+.infos-contact textarea {
+  border-radius: 5px;
+}
+
+.infos-contact label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+
+}
+
+
+/* ── MODALE ── */
+/* ── OVERLAY ── */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 1200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.modal-overlay.is-open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* ── MODAL BOX ── */
+.modal-box {
+    background: #fff;
+    width: min(550px, 92vw);
+    position: relative;
+    overflow: hidden;
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.35s ease;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.18);
+}
+
+.modal-overlay.is-open .modal-box {
+    transform: translateY(0) scale(1);
+}
+
+/* ── BOUTON FERMER ── */
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #000000;
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+
+.modal-close:hover {
+    transform: rotate(90deg);
+}
+
+/* ── IMAGE ── */
+.modale .bg-img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ── FORMULAIRE ── */
+.modale .infos-contact {
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.modale .infos-contact label {
+    display: flex;
+    flex-direction: column;
+    font-family: poppins, sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000000;
+    gap: 6px;
+}
+
+.modale .infos-contact input[type="text"],
+.modale .infos-contact input[type="email"],
+.modale .infos-contact textarea {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    color: #1a1a1a;
+    width: 100%;
+    border: solid 1px #000000;
+    padding: 8px;
+    background: transparent;
+    outline: none;
+    transition: border-color 0.3s ease;
+    resize: none;
+}
+
+.modale .infos-contact textarea {
+    max-height: 200px;
+}
+
+.modale .infos-contact input:focus,
+.modale .infos-contact textarea:focus {
+    border-color: #000000;
+}
+
+.modale .infos-contact textarea {
+    height: 70px;
+}
+
+.modale .infos-contact input[type="submit"] {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    background: #D8D8D8;
+    color: #000000;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+    margin-top: 8px;
+    width: 100%;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.modale .infos-contact input[type="submit"]:hover {
+    background: #D8D8D8;
+    transform: translateY(-2px);
+}
