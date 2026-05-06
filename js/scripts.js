@@ -35,4 +35,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Ouvrir modale depuis bouton contact single page
+document.querySelectorAll('[data-open-modal]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        const ref = btn.dataset.photoRef || '';
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        const refField = overlay.querySelector('input[name="photo-ref"]');
+        if (refField && ref) refField.value = ref;
+    });
+});
+
 });
