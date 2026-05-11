@@ -16,9 +16,14 @@ $ref = get_post_meta( get_the_ID(), 'photo_ref', true );
             </a>
             <!-- Icône plein écran → lightbox -->
             <button
-                class="photo-block__btn"
+                class="photo-block__btn photo-block__btn--topright"
                 data-lightbox
                 data-src="<?php echo esc_url( get_the_post_thumbnail_url(get_the_ID(), 'full') ); ?>"
+                data-title="<?php echo esc_attr(get_the_title()); ?>"
+                data-category="<?php
+        $cats = get_the_terms(get_the_ID(), 'event_category');
+        echo $cats ? esc_attr($cats[0]->name) : '';
+    ?>"
                 title="Plein écran"
             >
                 <svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>

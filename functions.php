@@ -24,6 +24,7 @@ add_action('wp_enqueue_scripts', function() {
         wp_get_theme()->get('Version')
     );
 
+    // Scripts global (modale + burger)
     wp_enqueue_script(
         'nm-scripts',
         get_template_directory_uri() . '/js/scripts.js',
@@ -32,6 +33,16 @@ add_action('wp_enqueue_scripts', function() {
         true
     );
 
+    // Lightbox sur toutes les pages
+    wp_enqueue_script(
+        'nm-lightbox',
+        get_template_directory_uri() . '/js/lightbox.js',
+        [],
+        wp_get_theme()->get('Version'),
+        true
+    );
+
+    // Page d'accueil uniquement
     if (is_home() || is_front_page()) {
         wp_enqueue_script(
             'nm-home',
@@ -70,6 +81,14 @@ add_action('rest_api_init', function() {
             return get_permalink($post['id']);
         },
     ]);
+
+    register_rest_field('photo', 'photo_category', [
+    'get_callback' => function($post) {
+        $cats = get_the_terms($post['id'], 'event_category');
+        return $cats ? $cats[0]->name : '';
+    },
+]);
+
 });
 
 // ── API REST : filtres taxonomies ──
