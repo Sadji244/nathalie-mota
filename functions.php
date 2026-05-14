@@ -89,6 +89,14 @@ add_action('rest_api_init', function() {
     },
 ]);
 
+register_rest_field('photo', 'photo_meta', [
+    'get_callback' => function($post) {
+        return [
+            'ref' => get_post_meta($post['id'], 'photo_ref', true),
+        ];
+    },
+]);
+
 });
 
 // ── API REST : filtres taxonomies ──

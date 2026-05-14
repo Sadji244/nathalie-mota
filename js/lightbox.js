@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             photos = allBtns.map(b => ({
                 src      : b.dataset.src,
                 title    : b.dataset.title || '',
+                ref      : b.dataset.ref || '',
                 category : b.dataset.category || '',
             }));
             openLightbox(i);
@@ -55,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const photo = photos[currentIndex];
     lightboxImg.src = photo.src;
     lightboxImg.alt = photo.title;
-    lightboxTitle.textContent = photo.title;
+    lightboxTitle.textContent = photo.ref || photo.title;
 
     // Catégorie
     const lightboxCategory = lightbox.querySelector('.lightbox__category');

@@ -20,6 +20,7 @@ $ref = get_post_meta( get_the_ID(), 'photo_ref', true );
                 data-lightbox
                 data-src="<?php echo esc_url( get_the_post_thumbnail_url(get_the_ID(), 'full') ); ?>"
                 data-title="<?php echo esc_attr(get_the_title()); ?>"
+                data-ref="<?php echo esc_attr(get_post_meta(get_the_ID(), 'photo_ref', true)); ?>"
                 data-category="<?php
         $cats = get_the_terms(get_the_ID(), 'event_category');
         echo $cats ? esc_attr($cats[0]->name) : '';

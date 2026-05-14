@@ -140,6 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 data-src="${full}"
                 data-title="${title}"
                 data-category="${category}"
+                data-ref="${photo.photo_meta?.ref || ''}"
                 title="Plein écran"
             >
                 <svg viewBox="0 0 24 24">

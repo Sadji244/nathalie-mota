@@ -894,8 +894,9 @@ body {
 /* ── BARRE BAS ── */
 .lightbox__bar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 24px;
+    width: 65vw;
     margin-top: 24px;
 }
 
